@@ -1,61 +1,60 @@
+from django.http import HttpResponse
 from django.shortcuts import render
+from . import models
 
 # Create your views here.
 
 def anakart_view(request):
-    anakart_dict={
-        "anakartlar":{
-            "1":{
-                "name" : "GIGABYTE B650M S2H 6400(OC) DDR5 Soket AM5 M.2 HDMI DP D-Sub mATX Anakart",
-                "price" : "3.788,40 ",
-                "image_url": "https://img-itopya.mncdn.com/cdn/250/yeni-proje-2023-09-29t113240092-3df484.jpg"
-                },
-            "2":{
-                "name" : "ASUS EX-B650M-V7 8000MHz(OC) DDR5 Soket AM5 M.2 HDMI mATX Anakart",
-                "price" : "6.000,21",
-                "image_url": "https://img-itopya.mncdn.com/cdn/250/yeni-proje-2023-09-22t111627711-b41a8a.jpg"
-                },
-            "3":{
-                "name" : "ASUS EX-B650M-V7 8000MHz(OC) DDR5 Soket AM5 M.2 HDMI mATX Anakart",
-                "price" : "6.000,21",
-                "image_url": "https://img-itopya.mncdn.com/cdn/250/yeni-proje-2023-09-22t111627711-b41a8a.jpg"
-                },
-             "4":{
-                "name" : "ASUS EX-B650M-V7 8000MHz(OC) DDR5 Soket AM5 M.2 HDMI mATX Anakart",
-                "price" : "6.000,21",
-                "image_url": "https://img-itopya.mncdn.com/cdn/250/yeni-proje-2023-09-22t111627711-b41a8a.jpg"
-                },
-                  "5":{
-                "name" : "ASUS EX-B650M-V7 8000MHz(OC) DDR5 Soket AM5 M.2 HDMI mATX Anakart",
-                "price" : "6.000,21",
-                "image_url": "https://img-itopya.mncdn.com/cdn/250/yeni-proje-2023-09-22t111627711-b41a8a.jpg"
-                },
-                  "6":{
-                "name" : "ASUS EX-B650M-V7 8000MHz(OC) DDR5 Soket AM5 M.2 HDMI mATX Anakart",
-                "price" : "6.000,21",
-                "image_url": "https://img-itopya.mncdn.com/cdn/250/yeni-proje-2023-09-22t111627711-b41a8a.jpg"
-                },
-                  "7":{
-                "name" : "ASUS EX-B650M-V7 8000MHz(OC) DDR5 Soket AM5 M.2 HDMI mATX Anakart",
-                "price" : "6.000,21",
-                "image_url": "https://img-itopya.mncdn.com/cdn/250/yeni-proje-2023-09-22t111627711-b41a8a.jpg"
-                },
-            }
-        }
+    anakart = models.Product.objects.filter(category_id = 2)
+    anakart_dict={"anakartlar":anakart}
     return render(request, 'parts_of_computer_app/anakart.html', context=anakart_dict)
 
 
 def bilgisayar_kasalari_view(request):  
-    return render(request, 'parts_of_computer_app/bilgisayar-kasalari.html')
+    bilgisayar_kasalari = models.Product.objects.filter(category_id = 5)
+    bilgisayar_kasalari_dict={"bilgisayar_kasalari": bilgisayar_kasalari}   
+    return render(request, 'parts_of_computer_app/bilgisayar-kasalari.html',context=bilgisayar_kasalari_dict)
 
-def ekran_karti_view(request):    
-    return render(request, 'parts_of_computer_app/ekran-karti.html')
+def ekran_karti_view(request):
+    ekran_karti = models.Product.objects.filter(category_id = 4)
+    ekran_karti_dict={"ekran_kartlari": ekran_karti}       
+    return render(request, 'parts_of_computer_app/ekran-karti.html',context=ekran_karti_dict)
 
 def islemci_view(request):
-    return render(request, 'parts_of_computer_app/islemci.html')
+    islemci = models.Product.objects.filter(category_id = 1)
+    islemci_dict={"islemciler": islemci}
+    return render(request, 'parts_of_computer_app/islemci.html', context= islemci_dict)
 
-def ram_view(request):    
-    return render(request, 'parts_of_computer_app/ram.html')
+def ram_view(request):
+    ram = models.Product.objects.filter(category_id = 3)
+    ram_dict={"rams": ram}    
+    return render(request, 'parts_of_computer_app/ram.html', context= ram_dict)
 
-def home_view(request):    
-    return render(request, 'parts_of_computer_app/home.html')
+def islemci_sogutucular_view(request):
+    sogutucu = models.Product.objects.filter(category_id = 6)
+    sogutucu_dict={"sogutucular": sogutucu}    
+    return render(request, 'parts_of_computer_app/sogutucular.html', context= sogutucu_dict)
+
+def kasa_fanlari_view(request):
+    kasa_fanlari = models.Product.objects.filter(category_id = 7)
+    kasa_fanlari_dict={"kasa_fanlari": kasa_fanlari}    
+    return render(request, 'parts_of_computer_app/kasa-fanlari.html', context= kasa_fanlari_dict)
+
+def termal_macun_view(request):
+    termal_macun = models.Product.objects.filter(category_id = 8)
+    termal_macun_dict={"termal_macunlar": termal_macun}    
+    return render(request, 'parts_of_computer_app/termal-macun.html', context= termal_macun_dict)
+
+def home_view(request):
+    
+
+    """
+    if request.method == "GET":
+        aranan_metin = request.GET.get('search')
+        print(aranan_metin)
+        return HttpResponse(f'Aranan metin: {aranan_metin}')
+    else:
+        """
+    products = models.Product.objects.all()
+    products_dict = {"products": products}
+    return render(request, 'parts_of_computer_app/home.html',context=products_dict)

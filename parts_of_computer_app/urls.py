@@ -11,5 +11,11 @@ urlpatterns = [
     path("ekran-karti/", views.ekran_karti_view, name="ekran-karti"),
     path("islemci/", views.islemci_view, name="islemci"),
     path("bilgisayar-kasalari/", views.bilgisayar_kasalari_view, name="bilgisayar-kasalari"),
+    path("islemci-sogutucular/", views.islemci_sogutucular_view, name="islemci-sogutucular"),
+    path("kasa-fanlari/", views.kasa_fanlari_view, name="kasa-fanlari"),
+    path("termal-macun/", views.termal_macun_view, name="termal-macun"),
+
+
+
 
 ]
