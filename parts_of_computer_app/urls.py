@@ -14,8 +14,8 @@ urlpatterns = [
     path("islemci-sogutucular/", views.islemci_sogutucular_view, name="islemci-sogutucular"),
     path("kasa-fanlari/", views.kasa_fanlari_view, name="kasa-fanlari"),
     path("termal-macun/", views.termal_macun_view, name="termal-macun"),
-
-
-
+    path("klavye/", views.klavye_view, name="klavye"),
+    path("monitor/", views.monitor_view, name="monitor"),
+    path("mouse/", views.mouse_view, name="mouse"),
 
 ]

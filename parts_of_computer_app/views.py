@@ -45,6 +45,21 @@ def termal_macun_view(request):
     termal_macun_dict={"termal_macunlar": termal_macun}    
     return render(request, 'parts_of_computer_app/termal-macun.html', context= termal_macun_dict)
 
+def klavye_view(request):
+    klavyeler = models.Product.objects.filter(category_id = 9)
+    klavyeler_dict={"klavyeler": klavyeler}    
+    return render(request, 'parts_of_computer_app/termal-macun.html', context= klavyeler_dict)
+
+def monitor_view(request):
+    monitorler = models.Product.objects.filter(category_id = 10)
+    monitorler_dict={"monitorler": monitorler}    
+    return render(request, 'parts_of_computer_app/termal-macun.html', context= monitorler_dict)
+
+def mouse_view(request):
+    mouse = models.Product.objects.filter(category_id = 11)
+    mouse_dict={"mouseler": mouse}    
+    return render(request, 'parts_of_computer_app/termal-macun.html', context= mouse_dict)
+
 def home_view(request):
     
 
