@@ -48,17 +48,17 @@ def termal_macun_view(request):
 def klavye_view(request):
     klavyeler = models.Product.objects.filter(category_id = 9)
     klavyeler_dict={"klavyeler": klavyeler}    
-    return render(request, 'parts_of_computer_app/termal-macun.html', context= klavyeler_dict)
+    return render(request, 'parts_of_computer_app/klavye.html', context= klavyeler_dict)
 
 def monitor_view(request):
     monitorler = models.Product.objects.filter(category_id = 10)
     monitorler_dict={"monitorler": monitorler}    
-    return render(request, 'parts_of_computer_app/termal-macun.html', context= monitorler_dict)
+    return render(request, 'parts_of_computer_app/monitor.html', context= monitorler_dict)
 
 def mouse_view(request):
     mouse = models.Product.objects.filter(category_id = 11)
     mouse_dict={"mouseler": mouse}    
-    return render(request, 'parts_of_computer_app/termal-macun.html', context= mouse_dict)
+    return render(request, 'parts_of_computer_app/mouse.html', context= mouse_dict)
 
 def home_view(request):
     
