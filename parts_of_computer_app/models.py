@@ -20,10 +20,10 @@ class Product(models.Model):
 
 # anakart özellikleri
 class MotherboardFeature(models.Model):
-    processor_Socket_Type = models.CharField(max_length=255)
-    ram_Type = models.CharField(max_length=255)
-    compatible_Processors =models.CharField(max_length=255)
-    motherboard_Size = models.CharField(max_length=255)
+    processor_Socket_Type = models.CharField(max_length=255,null=True)
+    ram_Type = models.CharField(max_length=255,null=True)
+    compatible_Processors =models.CharField(max_length=255,null=True)
+    motherboard_Size = models.CharField(max_length=255,null=True)
     
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
@@ -31,13 +31,13 @@ class MotherboardFeature(models.Model):
         return f"{self.product, self.processor_Socket_Type, self.ram_Type, self.compatible_Processors, self.motherboard_Size}"
 
 
-# bilgisayar kasası özellikleri    
+# bilgisayar kasası özellikleri  
 class ComputerCaseFeature(models.Model):
-    case_Type = models.CharField(max_length=255)
-    PSU = models.CharField(max_length=255)
-    PSU_Location = models.CharField(max_length=255)
-    transparent_Case = models.CharField(max_length=255)
-    type_C = models.CharField(max_length=255)
+    case_Type = models.CharField(max_length=255,null=True)
+    PSU = models.CharField(max_length=255,null=True)
+    PSU_Location = models.CharField(max_length=255,null=True)
+    transparent_Case = models.CharField(max_length=255,null=True)
+    type_C = models.CharField(max_length=255,null=True)
 
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
@@ -47,10 +47,10 @@ class ComputerCaseFeature(models.Model):
 
 # ekrankartı özellikleri
 class GraphicsCardFeature(models.Model):
-    gpu_Manufacturer = models.CharField(max_length=255)
-    gpu_Model = models.CharField(max_length=255)
-    memory_Type = models.CharField(max_length=255)
-    gpu_Memory_Capacity = models.CharField(max_length=255)
+    gpu_Manufacturer = models.CharField(max_length=255,null=True)
+    gpu_Model = models.CharField(max_length=255,null=True)
+    memory_Type = models.CharField(max_length=255,null=True)
+    gpu_Memory_Capacity = models.CharField(max_length=255,null=True)
 
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
@@ -60,11 +60,11 @@ class GraphicsCardFeature(models.Model):
 
 # işlemci özellikleri
 class ProcessorFeature(models.Model):
-    processor_Model = models.CharField(max_length=255)
-    processor_Manufacturer = models.CharField(max_length=255)
-    processor_Socket_Type = models.CharField(max_length=255)
-    processor_Series = models.CharField(max_length=255)
-    core_Count = models.CharField(max_length=255)
+    processor_Model = models.CharField(max_length=255,null=True)
+    processor_Manufacturer = models.CharField(max_length=255,null=True)
+    processor_Socket_Type = models.CharField(max_length=255,null=True)
+    processor_Series = models.CharField(max_length=255,null=True)
+    core_Count = models.CharField(max_length=255,null=True)
 
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
@@ -74,11 +74,11 @@ class ProcessorFeature(models.Model):
 
 # kasa fanları özellikleri
 class CaseFanFeature(models.Model):
-    cooling_Type = models.CharField(max_length=255)
-    fan_Count = models.CharField(max_length=255)
-    led_Type = models.CharField(max_length=255)
-    power_Connector = models.CharField(max_length=255)
-    rpm = models.CharField(max_length=255)
+    cooling_Type = models.CharField(max_length=255,null=True)
+    fan_Count = models.CharField(max_length=255,null=True)
+    led_Type = models.CharField(max_length=255,null=True)
+    power_Connector = models.CharField(max_length=255,null=True)
+    rpm = models.CharField(max_length=255,null=True)
 
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
@@ -88,11 +88,11 @@ class CaseFanFeature(models.Model):
 
 # klavye özellikleri
 class KeyboardFeature(models.Model):
-    connection_Type = models.CharField(max_length=255)
-    mechanical = models.BooleanField()
-    keyboard_Layout = models.CharField(max_length=255)
-    wrist_Support = models.BooleanField()
-    numpad = models.BooleanField()
+    connection_Type = models.CharField(max_length=255,null=True)
+    mechanical = models.BooleanField(null=True)
+    keyboard_Layout = models.CharField(max_length=255,null=True)
+    wrist_Support = models.BooleanField(null=True)
+    numpad = models.BooleanField(null=True)
 
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
@@ -102,11 +102,11 @@ class KeyboardFeature(models.Model):
 
 # monitör özellikleri
 class MonitorFeature(models.Model):
-    screen_Size = models.CharField(max_length=255)
-    resolution = models.CharField(max_length=255)
-    refresh_Rate = models.CharField(max_length=255)
-    panel_Type = models.CharField(max_length=255)
-    response_Time = models.CharField(max_length=255)
+    screen_Size = models.CharField(max_length=255,null=True)
+    resolution = models.CharField(max_length=255,null=True)
+    refresh_Rate = models.CharField(max_length=255,null=True)
+    panel_Type = models.CharField(max_length=255,null=True)
+    response_Time = models.CharField(max_length=255,null=True)
 
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
@@ -116,11 +116,11 @@ class MonitorFeature(models.Model):
 
 # fare özellikleri
 class MouseFeature(models.Model):
-    connection_Type = models.CharField(max_length=255)
-    tracking_Type = models.CharField(max_length=255)
-    button_Count = models.CharField(max_length=255)
-    usage_Type = models.CharField(max_length=255)
-    max_DPI = models.CharField(max_length=255)
+    connection_Type = models.CharField(max_length=255,null=True)
+    tracking_Type = models.CharField(max_length=255,null=True)
+    button_Count = models.CharField(max_length=255,null=True)
+    usage_Type = models.CharField(max_length=255,null=True)
+    max_DPI = models.CharField(max_length=255,null=True)
 
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
@@ -130,11 +130,11 @@ class MouseFeature(models.Model):
 
 # ram özellikleri
 class RamFeature(models.Model):
-    ram_Type = models.CharField(max_length=255)
-    ram_Capacity = models.CharField(max_length=255)
-    ram_Frequency = models.CharField(max_length=255)
-    channel_Type = models.CharField(max_length=255)
-    ram_Compatibility = models.CharField(max_length=255)
+    ram_Type = models.CharField(max_length=255,null=True)
+    ram_Capacity = models.CharField(max_length=255,null=True)
+    ram_Frequency = models.CharField(max_length=255,null=True)
+    channel_Type = models.CharField(max_length=255,null=True)
+    ram_Compatibility = models.CharField(max_length=255,null=True)
 
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
@@ -144,10 +144,11 @@ class RamFeature(models.Model):
 
 # soğutucular özellikleri
 class CoolerFeature(models.Model):
-    compatible_Sockets = models.CharField(max_length=255)
-    led = models.CharField(max_length=255)
-    radiator_Size = models.CharField(max_length=255)
-    fan_Count = models.IntegerField()
+    compatible_Sockets = models.CharField(max_length=255,null=True)
+    cooling_Type = models.CharField(max_length=255,null=True)
+    led = models.CharField(max_length=255,null=True)
+    radiator_Size = models.CharField(max_length=255,null=True)
+    fan_Count = models.IntegerField(max_length=10,null=True)
 
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
