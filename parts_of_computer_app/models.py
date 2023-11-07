@@ -148,7 +148,7 @@ class CoolerFeature(models.Model):
     cooling_Type = models.CharField(max_length=255,null=True)
     led = models.CharField(max_length=255,null=True)
     radiator_Size = models.CharField(max_length=255,null=True)
-    fan_Count = models.IntegerField(max_length=10,null=True)
+    fan_Count = models.IntegerField(null=True)
 
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
 
