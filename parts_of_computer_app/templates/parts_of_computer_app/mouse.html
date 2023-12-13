@@ -14,6 +14,15 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ mouse.price }} TL</h5>
                     <p class="card-text">{{ mouse.name }}</p>
+                    <ul>
+                        
+                        <li>{{ mouse.MouseFeature.connection_Type}}</li>
+                        <li>{{ mouse.MouseFeature.tracking_Type}}</li>
+                        <li>{{ mouse.MouseFeature.button_Count}}</li>
+                        <li>{{ mouse.MouseFeature.usage_Type}}</li>
+                        <li>{{ mouse.MouseFeature.max_DPI}}</li>
+        
+                    </ul>
                     <a href="#" class="btn btn-primary">Ekle</a>
                 </div>
                 

@@ -14,6 +14,14 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ ekran_karti.price }} TL</h5>
                     <p class="card-text">{{ ekran_karti.name }}</p>
+                    <ul>
+                        
+                        <li>{{ ekran_karti.GraphicsCardFeature.gpu_Manufacturer}}</li>
+                        <li>{{ ekran_karti.GraphicsCardFeature.gpu_Model}}</li>
+                        <li>{{ ekran_karti.GraphicsCardFeature.memory_Type}}</li>
+                        <li>{{ ekran_karti.GraphicsCardFeature.gpu_Memory_Capacity}}</li>
+
+                    </ul>
                     <a href="#" class="btn btn-primary">Ekle</a>
                 </div>
                 

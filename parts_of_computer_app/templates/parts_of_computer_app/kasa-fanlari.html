@@ -14,6 +14,15 @@
             <div class="card-body">
             <h5 class="card-title">{{ kasa_fani.price }} TL</h5>
             <p class="card-text">{{ kasa_fani.name }}</p>
+            <ul>
+                        
+                <li>{{ kasa_fani.CaseFanFeature.cooling_Type}}</li>
+                <li>{{ kasa_fani.CaseFanFeature.fan_Count}}</li>
+                <li>{{ kasa_fani.CaseFanFeature.led_Type}}</li>
+                <li>{{ kasa_fani.CaseFanFeature.power_Connector}}</li>
+                <li>{{ kasa_fani.CaseFanFeature.rpm}}</li>
+
+            </ul>
             <a href="#" class="btn btn-primary">Ekle</a>
             </div>
             

@@ -15,9 +15,17 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ islemci.price }} TL</h5>
                     <p class="card-text">{{ islemci.name }}</p>
+                    <ul>                        
+                            <li>{{ islemci.ProcessorFeature.processor_Model}}</li>
+                            <li>{{ islemci.ProcessorFeature.processor_Manufacturer}}</li>
+                            <li>{{ islemci.ProcessorFeature.processor_Socket_Type}}</li>
+                            <li>{{ islemci.ProcessorFeature.processor_Series}}</li>
+                            <li>{{ islemci.ProcessorFeature.core_Count}}</li>                       
+                    </ul>
+
                     <a href="#" class="btn btn-primary">Ekle</a>
-                </div>
-                
+                             
+                </div>       
             </div>
     {% endfor %}
 </div>
