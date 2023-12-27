@@ -5,7 +5,7 @@ from rest_framework import  serializers
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ("id","name",)
+        fields = ("id","name","description","image_url")
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,7 +27,7 @@ class ComputerCaseFeatureSerializer(serializers.ModelSerializer):
 class GraphicsCardFeatureSerializer(serializers.ModelSerializer) : 
     class Meta :
         model = GraphicsCardFeature
-        fields =  ("id","gpu_Manufacturer" , "gpu_Model" , "memory_Type" , "gpu_Memory_Capacity" , "product")
+        fields =  ("id","gpu_Manufacturer" , "gpu_Model" , "memory_Type" , "gpu_Memory_Capacity" , "product" )
 
 
 class  ProcessorFeatureSerializer(serializers.ModelSerializer) :
@@ -35,12 +35,6 @@ class  ProcessorFeatureSerializer(serializers.ModelSerializer) :
         model =  ProcessorFeature
         fields =  ("id" ,"processor_Model" , "processor_Manufacturer" , "processor_Socket_Type" , "processor_Series" , "core_Count","product")
 
-
-
-class  ProcessorFeatureSerializer(serializers.ModelSerializer) :
-    class Meta:
-        model =  ProcessorFeature
-        fields =  ("id","processor_Model" , "processor_Manufacturer" , "processor_Socket_Type" , "processor_Series" , "core_Count","product")
 
 
 class CaseFanFeatureSerializer(serializers.ModelSerializer):

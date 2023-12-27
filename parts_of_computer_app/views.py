@@ -122,14 +122,14 @@ def motherboard(request , product):
 def computer_case(request ,product):
     if request.method == 'GET':
         data = ComputerCaseFeature.objects.filter(product = product)
-        serializer = GraphicsCardFeatureSerializer(data, many=True)
+        serializer = ComputerCaseFeatureSerializer(data, many=True)
         return  Response(serializer.data)
 
 @api_view(["GET"])
 def  graphics_card(request,product):
     if request.method == 'GET':
         data = GraphicsCardFeature.objects.filter(product = product)
-        serializer = ComputerCaseFeatureSerializer(data, many=True)
+        serializer = GraphicsCardFeatureSerializer(data, many=True)
         return  Response(serializer.data)
 @api_view(["GET"])  
 def  processor(request,product):
